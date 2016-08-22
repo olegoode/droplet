@@ -1,8 +1,9 @@
-var express = require('express');
-var app = express();
-var path = require('path');
-var formidable = require('formidable');
-var fs = require('fs');
+var express = require('express'),
+   app = express(),
+   path = require('path'),
+   formidable = require('formidable'),
+   fs = require('fs'),
+   crypto = require('crypto');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -15,6 +16,9 @@ app.post('/upload', function(req, res) {
 	form.multiples = true;
 	form.uploadDir = path.join(__dirname, '/uploads');
 	form.on('file', function(field, file) {
+		fs.readFile(file.path, function(err,data) {
+			console.log("New file! SHA-1: " + crypto.createHash('sha1').update(data).digest('hex'));
+		})
 		fs.rename(file.path, path.join(form.uploadDir, file.name));
 	});
 	form.on('error', function(err) {

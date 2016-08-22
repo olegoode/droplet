@@ -24,7 +24,6 @@ dropForm.on('submit', function(e) {
           if (e.lengthComputable) {
             var percentComplete = e.loaded / e.total;
             percentComplete = parseInt(percentComplete * 100);
-
             $('.progress-fill').width(percentComplete + '%');
           }
         }, false);
@@ -43,7 +42,10 @@ dropForm.on('drag dragstart dragend dragover dragenter dragleave drop', function
 	e.preventDefault();
 	e.stopPropagation();
 })
-.on('dragbetterenter', function() {
+.on('dragenter', function(e) {
+  console.log(e.originalEvent.dataTransfer.types)
+})
+.on('dragbetterenter', function(e) {
 	dropForm.addClass('is-active');
   $('.droplet_status > div').removeClass('show');
   $('.progress-fill').width('0%');
@@ -52,6 +54,7 @@ dropForm.on('drag dragstart dragend dragover dragenter dragleave drop', function
 	dropForm.removeClass('is-active');
 })
 .on('drop', function(e) {
+  console.log(e.originalEvent.dataTransfer.items[0]);
 	droppedFiles = e.originalEvent.dataTransfer.files;
 	console.log(droppedFiles);
 	dropForm.trigger('submit');

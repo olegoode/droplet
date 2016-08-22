@@ -1,0 +1,15 @@
+{
+  "name": "droplet",
+  "version": "0.1",
+  "description": "Drag and drop file uploads/URL shortener",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ole Goode",
+  "license": "none",
+  "dependencies": {
+    "express": "^4.14.0",
+    "formidable": "^1.0.17"
+  }
+}

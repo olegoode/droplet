@@ -1,0 +1,58 @@
+html {
+	height: 100%;
+}
+
+body {
+  min-height: 100%;
+	background-color: #dfdfdf;
+  font-family: 'Roboto', sans-serif;
+}
+
+.droplet.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 10px;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?62935277');
+  src: url('../font/fontello.eot?62935277#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff?62935277') format('woff'),
+       url('../font/fontello.ttf?62935277') format('truetype'),
+       url('../font/fontello.svg?62935277#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#upload_form {
+	min-height: 100%;
+	text-align: center;
+}
+
+#upload_form.is-active {
+  background-color: #fff;
+}
+
+.icons {
+  font-family: 'fontello';
+  font-style: normal;
+}
+
+.upload-icon {
+  font-size: 128px;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input.droplet_file {
+  display: none;
+}
+
+.droplet_status > p {
+  display: none;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>New Upload</title>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<main class="droplet container">
+    <div id="upload_form" class="droplet_form" >
+      <div class="droplet_upload">
+        <i class="icons upload-icon">&#xf0ee;</i>
+        <input class="droplet_file" type="file" name="files[]" id="file" multiple />
+        <label for="file">Drag files here</label>
+        <span>or</span>
+        <a id="upload_button" href="#0" class="droplet_button">choose them</a>.
+      </div>
+      <div class="droplet_status">
+        <p class="uploading">Uploading</p>
+        <p class="success">Success</p>
+        <p class="error">Error</p>
+      </div>
+    </div>
+	</div>
+  <script type="text/javascript" src="js/upload.js"></script>
+</body>
+</html>

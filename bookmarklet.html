@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Droplet</title>
+</head>
+<body>
+	<div class="continaer">
+		<a id="upload" href="#0">Open new window</a>
+	</div>
+
+	<script type="text/javascript">
+		var el = document.getElementById("upload");
+		var posX = screen.width / 2 - 250;
+		var winParams = "height=300,width=500,top=50,left="+ posX + ",menubar=no,toolbar=no,location=no,scrollbars=no,status=no";
+		console.log(el);
+		el.addEventListener("click", function() {
+			window.open("http://localhost:3000/", "droplet", winParams);
+		})
+	</script>
+</body>
+</html>

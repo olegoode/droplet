@@ -1,6 +1,6 @@
 {
   "name": "droplet",
-  "version": "0.1",
+  "version": "0.0.1",
   "description": "Drag and drop file uploads/URL shortener",
   "main": "index.html",
   "scripts": {

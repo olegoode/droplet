@@ -31,6 +31,7 @@ body {
 #upload_form {
 	min-height: 100%;
 	text-align: center;
+  position: relative;
 }
 
 #upload_form.is-active {
@@ -53,6 +54,50 @@ input.droplet_file {
   display: none;
 }
 
-.droplet_status > p {
-  display: none;
+.droplet_progress,
+.progress-bar,
+.progress-fill {
+  pointer-events: none;
 }
+
+.progress-bar {
+  height: 20px;
+  background-color: #fff;
+}
+
+.progress-fill {
+  height: 20px;
+  background-color: red;
+  width: 0;
+  transition: width .2s;
+}
+
+.droplet_status {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.droplet_status > div {
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  height: 0;
+  opacity: 0;
+  transition: height .2s, opacity .2s;
+}
+
+.droplet_status .show {
+  height: 40px;
+  opacity: 1;
+  transition: height .8s, opacity .5s;
+}
+
+.success {
+  background-color: green;
+}
+
+.error {
+  background-color: red;
+}
+

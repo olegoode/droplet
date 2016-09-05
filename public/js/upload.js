@@ -1,7 +1,17 @@
 var dropForm = $('#upload_form');
-var dropZone = $('#dropzone');
 var uploadBtn = $('#upload_button');
+var input = $('#file');
 var droppedFiles = false;
+
+uploadBtn.on('click', function(e) {
+  e.preventDefault();
+  $('#file').click();
+})
+
+input.on('change', function(e) {
+  droppedFiles =  e.originalEvent.target.files;
+  dropForm.trigger('submit');
+})
 
 dropForm.on('submit', function(e) {
   e.preventDefault();
@@ -32,6 +42,9 @@ dropForm.on('submit', function(e) {
       success: function(data) {
         console.log('upload successful\n' + data);
         $('div.'+ data).addClass('show');
+        if (data == 'success') {
+          setTimeout(function() {$('.success').removeClass('show'); }, 3000);
+        };
       }      
     })
     console.log(formData.getAll('files[]'));

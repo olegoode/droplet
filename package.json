@@ -11,6 +11,8 @@
   "dependencies": {
     "express": "^4.14.0",
     "formidable": "^1.0.17",
-    "hashids": "^1.1.0"
+    "hashids": "^1.1.0",
+    "redis": "^2.6.2",
+    "shortid": "^2.2.6"
   }
 }
